@@ -1,6 +1,6 @@
 FROM buildpack-deps:stretch
 
-LABEL "repository"="https://github.com/presslabs/stack-deploy-github-action"
+LABEL "repository"="https://github.com/blueoceanideas/stack-deploy-github-action"
 LABEL "maintainer"="Presslabs <support@presslabs.com>"
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
