@@ -12,6 +12,6 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: ghcr.io/blueoceanideas/stack-deployer
-        username: ${{ secrets.GITHUB_USERNAME }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        username: ${{ secrets.DOCKER_BUILD_GITHUB_SECRET }}
+        password: ${{ secrets.DOCKER_GITHUB_USER }}
         registry: ghcr.io
