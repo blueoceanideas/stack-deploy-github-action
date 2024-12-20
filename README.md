@@ -19,10 +19,10 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       id: build
       with:
-        name: gcr.io/test-stack/foxes
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        registry: gcr.io
+        name: ghcr.io/blueoceanideas/stack-deployer
+        username: ${{ secrets.GITHUB_USERNAME }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: ghcr.io
     - name: Deploy on Stack
       uses: presslabs/stack-deploy-github-action
       env:
@@ -30,7 +30,7 @@ jobs:
       with:
         namespace: proj-rl3e02
         wordpress: myawesomesite-2e304
-        image: gcr.io/test-stack/foxes:${{ steps.build.outputs.tag }}
+        image: ghcr.io/blueoceanideas/stack-deployer:${{ steps.build.outputs.tag }}
         google_project: vlads-ureactor
         google_zone: europe-west2
         google_cluster: stack
