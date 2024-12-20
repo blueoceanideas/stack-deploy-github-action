@@ -21,4 +21,4 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'docker://quay.io/bitpoke/stack-deployer'
+  image: 'docker://quay.io/presslabs/stack-deployer:latest'
